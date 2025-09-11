@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Godot — หน้าโปรเจกต์แยก</title>
+  <meta name="description" content="หน้าเว็บแยกสำหรับโปรเจกต์ Godot — แสดงตัวอย่าง, คำอธิบาย, ดาวน์โหลด และลิงก์เล่น" />
+  <style>
+    :root{--bg:#0b1018;--card:#162030;--accent:#ffab00;--muted:#9aa4b2;color-scheme: dark;}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,#060914 0%, #0b1018 100%); color:#e6eef8; line-height:1.5}
+    header{padding:24px 20px;display:flex;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .badge{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#ffab00,#ffd740);display:grid;place-items:center;color:#071022;font-weight:700}
+    h1{font-size:18px;margin:0}
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);margin-bottom:20px}
+    .btn{padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);cursor:pointer;color:inherit}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#ffd740);color:#071022;font-weight:600;border:none}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    footer{padding:24px;text-align:center;color:var(--muted);font-size:13px}
+    iframe,video{border-radius:8px;width:100%;height:auto}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="badge">G</div>
+      <div>
+        <h1>Godot — โปรเจกต์แยก</h1>
+        <div style="font-size:13px;color:var(--muted);">แสดงรายละเอียดโปรเจกต์ Godot</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ปุ่มย้อนกลับ -->
+    <button onclick="window.location.href='index.html'" class="btn primary" style="margin-bottom:18px">⬅ กลับไป Hub</button>
+
+    <!-- โปรเจกต์ -->
+    <div class="card">
+      <div id="projectTitle" style="font-size:20px;font-weight:700">Godot Project #1</div>
+      <div style="margin-top:6px;color:var(--muted);font-size:13px">ตัวอย่างเกมที่สร้างด้วย Godot</div>
+
+      <div style="margin-top:14px">
+        <!-- ฝัง iframe หรือวิดีโอ demo -->
+        <iframe id="projectFrame" src="about:blank" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="controls">
+        <button id="playOnline" class="btn">เล่นออนไลน์</button>
+        <button id="downloadZip" class="btn">ดาวน์โหลดเกม (.zip)</button>
+        <button id="openItch" class="btn">เปิดบน Itch.io</button>
+        <button id="shareLink" class="btn">คัดลอกลิงก์หน้า</button>
+      </div>
+
+      <div class="note">หมายเหตุ: เปลี่ยน URL ของ iframe หรือไฟล์ดาวน์โหลดตามโปรเจกต์จริง</div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 10px 0">คำอธิบาย</h3>
+      <p id="projectDesc" style="margin:0;color:var(--muted)">นี่คือคำอธิบายของเกม เช่น วิธีเล่น ฟีเจอร์เด่น และข้อมูลทีมผู้พัฒนา</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 10px 0">วิธีการเล่น</h3>
+      <ol style="margin:0;padding-left:20px;color:var(--muted)">
+        <li>ดาวน์โหลดหรือกดเล่นออนไลน์</li>
+        <li>อ่านคำแนะนำการควบคุม</li>
+        <li>สนุกกับเกม!</li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    สร้างด้วย ❤️ — หน้าเว็บตัวอย่างสำหรับโปรเจกต์ Godot
+  </footer>
+
+  <script>
+    function qs(param){const u=new URL(window.location);return u.searchParams.get(param)}
+
+    const id = qs('id');
+    if(id){
+      document.getElementById('projectTitle').textContent = `Godot Project #${id}`;
+      document.getElementById('projectDesc').textContent = `นี่คือรายละเอียดของ Godot Project หมายเลข ${id}. สามารถแก้ไขข้อมูลจริงได้ใน HTML หรือดึงจาก API.`;
+      document.getElementById('projectFrame').src = `demo/${id}/index.html`; // ตัวอย่างฝัง iframe ของเกม
+    }
+
+    document.getElementById('playOnline').onclick = ()=> alert('ลิงก์เล่นออนไลน์ยังไม่ถูกตั้งค่า');
+    document.getElement
