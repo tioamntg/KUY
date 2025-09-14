@@ -1,50 +1,62 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <title>Scratch Project Hub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scratch Studio — รวมคลิปสอน</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white">
-    <header >
-        <button onclick="window.location.href='index.html'" 
-        style="margin-bottom:12px;padding:8px 14px;border-radius:8px;
-               background:#ffcc00;color:#000;font-weight:600;cursor:pointer;">
-  
-</button>
-
-    </header>
-  <div class="max-w-6xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">🎮 Scratch Project Hub</h1>
-    <p class="text-gray-400 mb-8">เลือกโปรเจกต์ Scratch ที่คุณสนใจ แล้วกด “ดูรายละเอียด” เพื่อเข้าไปเล่นและอ่านข้อมูลเพิ่มเติม</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- การ์ดโปรเจกต์ 1 -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow">
-        <iframe src="https://scratch.mit.edu/projects/123456789/embed"
-                allowtransparency="true" width="100%" height="200"
-                frameborder="0" scrolling="no" allowfullscreen></iframe>
-        <h2 class="mt-3 text-lg font-semibold">เกมฝึกความเร็ว</h2>
-        <p class="text-gray-400 text-sm">คลิกเพื่อเล่นเกมแบบเต็ม</p>
-        <a href="scratch-project-page.html?id=123456789" 
-           class="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black rounded-lg font-medium">
-          ดูรายละเอียด
-        </a>
-      </div>
-
-      <!-- การ์ดโปรเจกต์ 2 -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow">
-        <iframe src="https://scratch.mit.edu/projects/987654321/embed"
-                allowtransparency="true" width="100%" height="200"
-                frameborder="0" scrolling="no" allowfullscreen></iframe>
-        <h2 class="mt-3 text-lg font-semibold">เกมผจญภัย</h2>
-        <p class="text-gray-400 text-sm">โปรเจกต์แนว RPG</p>
-        <a href="scratch-project-page.html?id=987654321" 
-           class="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black rounded-lg font-medium">
-          ดูรายละเอียด
-        </a>
+<body class="bg-gray-900 text-gray-100">
+  <!-- Header -->
+  <header class="p-6 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-green-500 rounded flex items-center justify-center font-bold">S</div>
+      <div>
+        <h1 class="text-lg font-bold">Scratch Studio — รวมคลิปสอน</h1>
+        <p class="text-sm text-gray-400">วิดีโอแนะนำการสร้างเกมด้วย Scratch</p>
       </div>
     </div>
+  </header>
+
+  <!-- Back Button -->
+  <div class="px-6">
+    <a href="index.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg mb-6">
+      ← กลับไป Hub
+    </a>
   </div>
+
+  <!-- Video Section -->
+  <main class="px-6 space-y-6">
+    <!-- ตัวอย่างคลิป -->
+    <div class="bg-gray-800 rounded-2xl p-6 shadow">
+      <h2 class="text-xl font-bold mb-4">Scratch Tutorial #1</h2>
+      <video controls class="w-full rounded-lg mb-4">
+        <source src="Scratch 1.mp4" type="video/mp4">
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+      </video>
+      <p class="text-gray-300 mb-4">วิดีโอสอนพื้นฐานการใช้งาน Scratch และการสร้างเกมแรกของคุณ</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow">
+      <h2 class="text-xl font-bold mb-4">Scratch Tutorial #2</h2>
+      <video controls class="w-full rounded-lg mb-4">
+        <source src="Scratch 2.mp4" type="video/mp4">
+      </video>
+      <p class="text-gray-300 mb-4">คลิปสอนการทำระบบควบคุมตัวละครและการชนกัน (Collision)</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-6 shadow">
+      <h2 class="text-xl font-bold mb-4">Scratch Tutorial #3</h2>
+      <video controls class="w-full rounded-lg mb-4">
+        <source src="Scratch 3.mp4" type="video/mp4">
+      </video>
+      <p class="text-gray-300 mb-4">คลิปสอนการทำระบบควบคุมตัวละครและการชนกัน (Collision)</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm py-6">
+    สร้างด้วย ❤️ เพื่อเป็นแหล่งรวมวิดีโอสอน Scratch Studio
+  </footer>
 </body>
 </html>

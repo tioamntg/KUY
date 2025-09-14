@@ -3,94 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GDevelop — หน้าโปรเจกต์แยก</title>
-  <meta name="description" content="หน้าเว็บแยกสำหรับโปรเจกต์ GDevelop — แสดงตัวอย่าง, คำอธิบาย, ดาวน์โหลด และลิงก์เล่น" />
-  <style>
-    :root{--bg:#0f1118;--card:#1c1f2d;--accent:#00bfa5;--muted:#9aa4b2;color-scheme: dark;}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,#06080f 0%, #0f1118 100%); color:#e6eef8; line-height:1.5}
-    header{padding:24px 20px;display:flex;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,0.05)}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo .badge{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#00bfa5,#64ffda);display:grid;place-items:center;color:#071022;font-weight:700}
-    h1{font-size:18px;margin:0}
-    .container{max-width:1100px;margin:28px auto;padding:0 20px}
-    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);margin-bottom:20px}
-    .btn{padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);cursor:pointer;color:inherit}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),#64ffda);color:#071022;font-weight:600;border:none}
-    .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .note{font-size:13px;color:var(--muted);margin-top:8px}
-    footer{padding:24px;text-align:center;color:var(--muted);font-size:13px}
-    iframe,video{border-radius:8px;width:100%;height:auto}
-  </style>
+  <title>GDevelop — รวมคลิปสอน</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <div class="logo">
-      <div class="badge">G</div>
+<body class="bg-gray-900 text-gray-100">
+  <!-- Header -->
+  <header class="p-6 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-green-500 rounded flex items-center justify-center font-bold">GD</div>
       <div>
-        <h1>GDevelop — โปรเจกต์แยก</h1>
-        <div style="font-size:13px;color:var(--muted);">แสดงรายละเอียดโปรเจกต์ GDevelop</div>
+        <h1 class="text-lg font-bold">GDevelop — รวมคลิปสอน</h1>
+        <p class="text-sm text-gray-400">วิดีโอแนะนำการสร้างเกมด้วย GDevelop</p>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- ปุ่มย้อนกลับ -->
-    <button onclick="window.location.href='index.html'" class="btn primary" style="margin-bottom:18px">⬅ กลับไป Hub</button>
+  <!-- Back Button -->
+  <div class="px-6">
+    <a href="index.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg mb-6">
+      ← กลับไป Hub
+    </a>
+  </div>
 
-    <!-- โปรเจกต์ -->
-    <div class="card">
-      <div id="projectTitle" style="font-size:20px;font-weight:700">GDevelop Project #1</div>
-      <div style="margin-top:6px;color:var(--muted);font-size:13px">ตัวอย่างเกมที่สร้างด้วย GDevelop</div>
-
-      <div style="margin-top:14px">
-        <!-- ฝัง iframe หรือวิดีโอ demo -->
-        <iframe id="projectFrame" src="about:blank" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="controls">
-        <button id="playOnline" class="btn">เล่นออนไลน์</button>
-        <button id="downloadZip" class="btn">ดาวน์โหลดเกม (.zip)</button>
-        <button id="openItch" class="btn">เปิดบน Itch.io</button>
-        <button id="shareLink" class="btn">คัดลอกลิงก์หน้า</button>
-      </div>
-
-      <div class="note">หมายเหตุ: เปลี่ยน URL ของ iframe หรือไฟล์ดาวน์โหลดตามโปรเจกต์จริง</div>
+  <!-- Video Section -->
+  <main class="px-6 space-y-6">
+    <!-- ตัวอย่างคลิป -->
+    <div class="bg-gray-800 rounded-2xl p-6 shadow">
+      <h2 class="text-xl font-bold mb-4">GDevelop Tutorial #1</h2>
+      <video controls class="w-full rounded-lg mb-4">
+        <source src="GDevelop 1.mp4" type="video/mp4">
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+      </video>
+      <p class="text-gray-300 mb-4">วิดีโอสอนพื้นฐานการใช้งาน GDevelop และการสร้างเกมแรกของคุณ</p>
     </div>
 
-    <div class="card">
-      <h3 style="margin:0 0 10px 0">คำอธิบาย</h3>
-      <p id="projectDesc" style="margin:0;color:var(--muted)">นี่คือคำอธิบายของเกม เช่น วิธีเล่น ฟีเจอร์เด่น และข้อมูลทีมผู้พัฒนา</p>
+    <div class="bg-gray-800 rounded-2xl p-6 shadow">
+      <h2 class="text-xl font-bold mb-4">GDevelop Tutorial #2</h2>
+      <video controls class="w-full rounded-lg mb-4">
+        <source src="GDevelop 2.mp4" type="video/mp4">
+      </video>
+      <p class="text-gray-300 mb-4">คลิปสอนการทำระบบควบคุมตัวละครและการชนกัน (Collision)</p>
     </div>
 
-    <div class="card">
-      <h3 style="margin:0 0 10px 0">วิธีการเล่น</h3>
-      <ol style="margin:0;padding-left:20px;color:var(--muted)">
-        <li>ดาวน์โหลดหรือกดเล่นออนไลน์</li>
-        <li>อ่านคำแนะนำการควบคุม</li>
-        <li>สนุกกับเกม!</li>
-      </ol>
+    <div class="bg-gray-800 rounded-2xl p-6 shadow">
+      <h2 class="text-xl font-bold mb-4">GDevelop Tutorial #3</h2>
+      <video controls class="w-full rounded-lg mb-4">
+        <source src="GDevelop 3.mp4" type="video/mp4">
+      </video>
+      <p class="text-gray-300 mb-4">คลิปสอนการทำระบบควบคุมตัวละครและการชนกัน (Collision)</p>
     </div>
   </main>
 
-  <footer>
-    สร้างด้วย ❤️ — หน้าเว็บตัวอย่างสำหรับโปรเจกต์ GDevelop
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm py-6">
+    สร้างด้วย ❤️ เพื่อเป็นแหล่งรวมวิดีโอสอน GDevelop
   </footer>
-
-  <script>
-    function qs(param){const u=new URL(window.location);return u.searchParams.get(param)}
-
-    const id = qs('id');
-    if(id){
-      document.getElementById('projectTitle').textContent = `GDevelop Project #${id}`;
-      document.getElementById('projectDesc').textContent = `นี่คือรายละเอียดของ GDevelop Project หมายเลข ${id}. สามารถแก้ไขข้อมูลจริงได้ใน HTML หรือดึงจาก API.`;
-      document.getElementById('projectFrame').src = `demo/${id}/index.html`; // ตัวอย่างฝัง iframe ของเกม
-    }
-
-    document.getElementById('playOnline').onclick = ()=> alert('ลิงก์เล่นออนไลน์ยังไม่ถูกตั้งค่า');
-    document.getElementById('downloadZip').onclick = ()=> window.open('download/game.zip','_blank');
-    document.getElementById('openItch').onclick = ()=> window.open('https://itch.io','_blank');
-    document.getElementById('shareLink').onclick = ()=>{navigator.clipboard.writeText(window.location.href).then(()=>alert('คัดลอกลิงก์แล้ว'))}
-  </script>
 </body>
 </html>
